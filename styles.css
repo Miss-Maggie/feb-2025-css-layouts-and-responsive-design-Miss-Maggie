@@ -1,0 +1,334 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    min-height: 100vh;
+    background-color: #472828;
+    color: #333;
+    align-content: center;
+}
+
+/* Header Styling */
+header {
+    grid-area: header;
+    background-color: #220e0e;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: left;
+    gap: 1rem;
+    border: 2px solid #2b1010; /* Add border to the header section */
+}
+
+header h1 {
+    font-size: 10rem; /* Enlarge the h1 */
+    margin: 0;
+    text-align: left; /* Align h1 to the left */
+    color: #f0e2e2;
+    max-width: max-content;
+    width: auto; /* Adjust width to fit content */
+}
+
+header .container {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row; /* Arrange links horizontally */
+    gap: 1rem; /* Add spacing between links */
+    justify-content: flex-end; /* Align navigation list to the right */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer; /* Make links clickable */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for hover effect */
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+    background-color: #472828; /* Add background color on hover */
+    color: #f1eaea; /* Change text color on hover */
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    display:list-item; /* Hidden by default */
+}
+
+/* Main Content Styling */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    padding: 2rem;
+    height: min-content;
+}
+
+.container{
+    display: grid;
+    grid-template-areas:
+        "banner"
+        "about"
+        "services" /* Place services above products */
+        "products"
+        "contact";
+    gap: 1rem;
+    align-items: center;
+    height: 80%;
+}
+
+section {
+    background-color: #2c1a1a;
+    color: #f1eaea;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 5px solid #2b1010; /* Add border to all sections */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition for hover effect */
+}
+
+section:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Products Section */
+.products {
+    display: flex; /* Use flex layout */
+    flex-wrap: nowrap; /* Prevent wrapping of product items */
+    gap: 1rem;
+    justify-content: space-between; /* Distribute items evenly */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
+    margin-top: 2rem; /* Add spacing from the section above */
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1b1a1a;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.product-item button {
+    background-color: #e0cfcf;
+    color: #110f0f;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-item button:hover {
+    background-color: #bbb4b4;
+}
+
+/* Contact Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input,
+form textarea,
+form button {
+    padding: 0.5rem;
+    border: 1px solid #251313;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #0f0f0f;
+    color: #e2d9d9;
+    border: boxed;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #333;
+    color: #f5ecec;
+}
+
+#contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 1rem;
+    align-items: start; /* Align content at the top */
+}
+
+#contact {
+    grid-column: 1; /* Contact form in the first column */
+}
+
+#location,
+#phone {
+    grid-column: 2; /* Location and phone in the second column */
+    background-color: #2c1a1a;
+    color: #f1eaea;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #2b1010;
+    margin-bottom: 1rem; /* Add spacing between location and phone sections */
+}
+
+/* Footer Styling */
+footer {
+    grid-area: footer;
+    background-color: #1d1212;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+.banner-image {
+    max-width: 70%;
+    height: auto;
+    display: block;
+    margin: 1rem auto; /* Center the image */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+#about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 0.5rem; /* Add spacing between columns */
+    align-items: start; /* Align content at the top */
+}
+
+#about p {
+    margin: 0;
+    text-align: justify; /* Justify text for better readability */
+}
+
+/* Animation for Images */
+@keyframes imageFadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.banner-image,
+.product-item img {
+    animation: imageFadeIn 1.5s ease-in-out;
+    transition: transform 0.3s ease;
+}
+
+.banner-image:hover,
+.product-item img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack header elements vertically */
+        gap: 0.5rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Adjust font size for smaller screens */
+        width: auto; /* Remove fixed width */
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+    }
+
+    .products {
+        flex-wrap: wrap; /* Allow wrapping of product items */
+        justify-content: center; /* Center items on smaller screens */
+    }
+
+    .product-item {
+        max-width: 100%; /* Ensure product items fit within the screen */
+    }
+
+    main {
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    }
+
+    #about {
+        grid-template-columns: 1fr; /* Single column layout for the About section */
+    }
+
+    .banner-image {
+        max-width: 100%; /* Ensure the banner image scales properly */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem; /* Further reduce font size for very small screens */
+    }
+
+    form input,
+    form textarea,
+    form button {
+        font-size: 0.9rem; /* Adjust form element sizes */
+    }
+
+    footer {
+        font-size: 0.8rem; /* Adjust footer text size */
+    }
+}
